@@ -1,7 +1,9 @@
 # GitHub Status Checker
 > Checks if GitHub is up
 
-[Codesandbox example](https://codesandbox.io/s/github-status-checker-rw0wz?file=/src/__tests__/App.test.js)
+[CodeSandbox example](https://codesandbox.io/s/github-status-checker-rw0wz?file=/src/__tests__/App.test.js)
+
+[Preview site](https://csb-rw0wz.netlify.app/)
 
 ### Commands
 - Build: `npm run build`
