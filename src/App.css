@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+.App h1 {
+  margin: 0;
+  padding: 2rem;
+  font-size: 1.3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.App > output {
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
+  padding: 1rem;
+  max-width: var(--max-width);
+  width: 100%;
+  margin: auto;
+}
+
+.App .content {
+  margin: 1rem;
+  box-shadow: var(--pill-shadow);
+  border: 1px solid var(--gray);
+  border-radius: 0.25em;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+.content::before,
+.content > * {
+  margin: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content::before {
+  content: attr(data-label);
+  font-weight: bold;
+  background: var(--label-background, var(--black));
+  color: var(--label-color, var(--white));
+  border-radius: 0.25em;
+  padding: 0.5em;
+  white-space: nowrap;
+}
+
+.App button {
+  --button-shadow-size: 5px;
+  --button-shadow:  var(--button-shadow-size) var(--button-shadow-size) var(--black);
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: var(--font);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+  box-shadow: var(--button-shadow);
+  background: var(--button-background, var(--blue));
+  color: var(--button-color, var(--white));
+  transition: 0.3s;
+}
+
+.App button:hover {
+  --button-shadow-size: 3px;
+}
+
+.App button:disabled,
+.App button:active {
+  --button-shadow-size: 0px;
+}
+
+.App button:disabled {
+  --button-background: var(--gray);
+}
+
+[data-label="200"] {
+  --label-background: var(--green);
+}
+
+[data-label="400"] {
+  --label-background: var(--red);
 }
